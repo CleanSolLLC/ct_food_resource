@@ -19,8 +19,11 @@ jobs:
           ruby-version: .ruby-version
           bundler-cache: true
 
-      - name: Scan for common Rails security vulnerabilities using static analysis
-        run: bin/brakeman --no-pager
+      - name: Run Brakeman
+        run: |
+          chmod +x bin/brakeman
+          bundle exec brakeman --no-pager
+          bundle exec brakeman --update
 
   scan_js:
     runs-on: ubuntu-latest
@@ -40,9 +43,9 @@ jobs:
 
       - name: Debug Importmap Permissions
          run:ls -l bin/importmap && whoami
-         
-      - name: Scan for security vulnerabilities in JavaScript dependencies
-        run: bin/importmap audit
+
+      - name: Run Importmap audit
+        run: bundle exec bin/importmap audit
 
   lint:
     runs-on: ubuntu-latest
@@ -57,7 +60,9 @@ jobs:
           bundler-cache: true
 
       - name: Lint code for consistent style
-        run: bin/rubocop -f github
+        run: |
+          chmod +x bin/rubocop
+          bundle exec rubocop -f github
 
   test:
     runs-on: ubuntu-latest
@@ -96,7 +101,9 @@ jobs:
           RAILS_ENV: test
           DATABASE_URL: postgres://postgres:postgres@localhost:5432
           # REDIS_URL: redis://localhost:6379/0
-        run: bin/rails db:test:prepare test test:system
+        run: |
+          chmod +x bin/rails
+          bundle exec rails db:test:prepare test test:system
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
