@@ -42,7 +42,7 @@ jobs:
         run: chmod +x bin/importmap
 
       - name: Debug Importmap Permissions
-         run:ls -l bin/importmap && whoami
+        run:ls -l bin/importmap && whoami
 
       - name: Run Importmap audit
         run: bundle exec bin/importmap audit
@@ -103,7 +103,8 @@ jobs:
           # REDIS_URL: redis://localhost:6379/0
         run: |
           chmod +x bin/rails
-          bundle exec rails db:test:prepare test test:system
+          bundle exec rails db:test:prepare 
+          bundle exec rails test test:system
 
       - name: Keep screenshots from failed system tests
         uses: actions/upload-artifact@v4
