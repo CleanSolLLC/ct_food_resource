@@ -3,7 +3,9 @@
 one:
   body: MyText
   food_resource: one
+  user: one
 
 two:
   body: MyText
   food_resource: two
+  user: two

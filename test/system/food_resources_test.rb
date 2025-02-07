@@ -17,7 +17,7 @@ class FoodResourcesTest < ApplicationSystemTestCase
     fill_in "Address line1", with: @food_resource.address_line1
     fill_in "Address line2", with: @food_resource.address_line2
     fill_in "City", with: @food_resource.city
-    fill_in "Comments", with: @food_resource.comments
+    fill_in "Additional info", with: @food_resource.additional_info
     fill_in "Contact", with: @food_resource.contact
     fill_in "Name", with: @food_resource.name
     fill_in "Phone number", with: @food_resource.phone_number
@@ -38,7 +38,7 @@ class FoodResourcesTest < ApplicationSystemTestCase
     fill_in "Address line1", with: @food_resource.address_line1
     fill_in "Address line2", with: @food_resource.address_line2
     fill_in "City", with: @food_resource.city
-    fill_in "Comments", with: @food_resource.comments
+    fill_in "Additional info", with: @food_resource.additional_info
     fill_in "Contact", with: @food_resource.contact
     fill_in "Name", with: @food_resource.name
     fill_in "Phone number", with: @food_resource.phone_number

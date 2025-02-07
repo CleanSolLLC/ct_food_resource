@@ -10,9 +10,9 @@ one:
   phone_number: MyString
   contact: MyString
   verified: false
-  comments: MyText
+  additional_info: MyText
   town: one
-
+  user_id: 1
 two:
   name: MyString
   address_line1: MyString
@@ -23,5 +23,6 @@ two:
   phone_number: MyString
   contact: MyString
   verified: false
-  comments: MyText
+  additional_info: MyText
   town: two
+  user_id: 2
