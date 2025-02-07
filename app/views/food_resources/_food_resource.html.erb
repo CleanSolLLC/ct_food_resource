@@ -46,12 +46,16 @@
 
   <p>
     <strong>Comments:</strong>
-    <%= food_resource.comments %>
+    <% food_resource.comments.each do |comment| %>
+      <p> <%= comment.user.user_name %></p>
+      <p><%= comment.created_at %></p>
+      <p><%= comment.body %></p>
+    <% end %>
   </p>
 
   <p>
     <strong>Town:</strong>
-    <%= food_resource.town_id %>
+    <%= food_resource.town.name %>
   </p>
 
 </div>
