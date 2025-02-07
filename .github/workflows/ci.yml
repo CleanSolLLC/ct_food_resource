@@ -42,7 +42,7 @@ jobs:
         run: chmod +x bin/importmap
 
       - name: Debug Importmap Permissions
-        run:ls -l bin/importmap && whoami
+        run: ls -l bin/importmap && whoami
 
       - name: Run Importmap audit
         run: bundle exec bin/importmap audit
