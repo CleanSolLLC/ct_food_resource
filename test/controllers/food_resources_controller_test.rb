@@ -23,7 +23,7 @@ class FoodResourcesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create food_resource" do
     assert_difference("FoodResource.count") do
-      post food_resources_url, params: { food_resource: { address_line1: @food_resource.address_line1, address_line2: @food_resource.address_line2, city: @food_resource.city, additional_info: @food_resource.additional_info, contact: @food_resource.contact, name: @food_resource.name, phone_number: @food_resource.phone_number, state: @food_resource.state, town_id: @food_resource.town_id, verified: @food_resource.verified, zip_code: @food_resource.zip_code, user_id: @food_resource.user_id}}
+      post food_resources_url, params: { food_resource: { address_line1: @food_resource.address_line1, address_line2: @food_resource.address_line2, city: @food_resource.city, additional_info: @food_resource.additional_info, contact: @food_resource.contact, name: @food_resource.name, phone_number: @food_resource.phone_number, state: @food_resource.state, town_id: @food_resource.town_id, verified: @food_resource.verified, zip_code: @food_resource.zip_code, user_id: @food_resource.user_id } }
     end
 
     assert_redirected_to food_resource_url(FoodResource.last)
@@ -40,7 +40,7 @@ class FoodResourcesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update food_resource" do
-    patch food_resource_url(@food_resource), params: { food_resource: { address_line1: @food_resource.address_line1, address_line2: @food_resource.address_line2, city: @food_resource.city, additional_info: @food_resource.additional_info, contact: @food_resource.contact, name: @food_resource.name, phone_number: @food_resource.phone_number, state: @food_resource.state, town_id: @food_resource.town_id, verified: @food_resource.verified, zip_code: @food_resource.zip_code, user_id: @food_resource.user_id}}
+    patch food_resource_url(@food_resource), params: { food_resource: { address_line1: @food_resource.address_line1, address_line2: @food_resource.address_line2, city: @food_resource.city, additional_info: @food_resource.additional_info, contact: @food_resource.contact, name: @food_resource.name, phone_number: @food_resource.phone_number, state: @food_resource.state, town_id: @food_resource.town_id, verified: @food_resource.verified, zip_code: @food_resource.zip_code, user_id: @food_resource.user_id } }
     assert_redirected_to food_resource_url(@food_resource)
   end
 
