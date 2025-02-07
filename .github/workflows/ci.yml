@@ -23,7 +23,6 @@ jobs:
         run: |
           chmod +x bin/brakeman
           bundle exec brakeman --no-pager
-          bundle exec brakeman --update
 
   scan_js:
     runs-on: ubuntu-latest
