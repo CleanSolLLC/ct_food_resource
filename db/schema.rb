@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_02_06_185612) do
+ActiveRecord::Schema[8.0].define(version: 2025_02_07_090319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -40,11 +40,12 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_06_185612) do
     t.string "phone_number"
     t.string "contact"
     t.boolean "verified"
-    t.text "comments"
+    t.text "additional_info"
     t.bigint "town_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.string "ext"
     t.index ["town_id"], name: "index_food_resources_on_town_id"
   end
 
@@ -70,6 +71,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_06_185612) do
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "user_name"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
