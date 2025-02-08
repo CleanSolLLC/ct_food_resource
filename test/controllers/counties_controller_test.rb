@@ -18,6 +18,9 @@ class CountiesControllerTest < ActionDispatch::IntegrationTest
 
   test "should get food_pantries" do
     get food_pantries_county_url(@county)
-    assert_response :success
+    @county.towns.each do |town|
+      get food_pantries_url(town)
+      assert_response :success
+    end
   end
 end
