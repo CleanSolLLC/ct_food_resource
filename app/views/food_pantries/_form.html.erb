@@ -1,10 +1,10 @@
-<%= form_with(model: food_resource) do |form| %>
-  <% if food_resource.errors.any? %>
+<%= form_with(model: food_pantry) do |form| %>
+  <% if food_pantry.errors.any? %>    
     <div style="color: red">
-      <h2><%= pluralize(food_resource.errors.count, "error") %> prohibited this food_resource from being saved:</h2>
+      <h2><%= pluralize(food_pantry.errors.count, "error") %> prohibited this food_pantry from being saved:</h2>
 
       <ul>
-        <% food_resource.errors.each do |error| %>
+        <% food_  pantry.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
       </ul>

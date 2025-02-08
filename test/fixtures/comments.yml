@@ -2,10 +2,10 @@
 
 one:
   body: MyText
-  food_resource: one
+  food_pantry: one
   user: one
 
 two:
   body: MyText
-  food_resource: two
+  food_pantry: two
   user: two

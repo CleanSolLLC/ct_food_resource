@@ -1,4 +1,4 @@
 class Town < ApplicationRecord
   belongs_to :county
-  has_many :food_resources
+  has_many :food_pantries
 end

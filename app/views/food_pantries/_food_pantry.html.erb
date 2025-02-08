@@ -1,52 +1,52 @@
-<div id="<%= dom_id food_resource %>">
+<div id="<%= dom_id food_pantry %>">
   <p>
     <strong>Name:</strong>
-    <%= food_resource.name %>
+    <%= food_pantry.name %>
   </p>
 
   <p>
     <strong>Address line1:</strong>
-    <%= food_resource.address_line1 %>
+    <%= food_pantry.address_line1 %>
   </p>
 
   <p>
     <strong>Address line2:</strong>
-    <%= food_resource.address_line2 %>
+    <%= food_pantry.address_line2 %>
   </p>
 
   <p>
     <strong>City:</strong>
-    <%= food_resource.city %>
+    <%= food_pantry.city %>
   </p>
 
   <p>
     <strong>State:</strong>
-    <%= food_resource.state %>
+    <%= food_pantry.state %>
   </p>
 
   <p>
     <strong>Zip code:</strong>
-    <%= food_resource.zip_code %>
+    <%= food_pantry.zip_code %>
   </p>
 
   <p>
     <strong>Phone number:</strong>
-    <%= food_resource.phone_number %>
+    <%= food_pantry.phone_number %>
   </p>
 
   <p>
     <strong>Contact:</strong>
-    <%= food_resource.contact %>
+    <%= food_pantry.contact %>
   </p>
 
   <p>
     <strong>Verified:</strong>
-    <%= food_resource.verified %>
+    <%= food_pantry.verified %>
   </p>
 
   <p>
     <strong>Comments:</strong>
-    <% food_resource.comments.each do |comment| %>
+    <% food_pantry.comments.each do |comment| %>
       <p> <%= comment.user.user_name %></p>
       <p><%= comment.created_at %></p>
       <p><%= comment.body %></p>
@@ -55,7 +55,7 @@
 
   <p>
     <strong>Town:</strong>
-    <%= food_resource.town.name %>
+    <%= food_pantry.town.name %>
   </p>
 
 </div>

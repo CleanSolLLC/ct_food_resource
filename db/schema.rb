@@ -16,11 +16,11 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_07_090319) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
-    t.bigint "food_resource_id", null: false
+    t.bigint "food_pantry_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
-    t.index ["food_resource_id"], name: "index_comments_on_food_resource_id"
+    t.index ["food_pantry_id"], name: "index_comments_on_food_pantry_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
@@ -30,7 +30,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_07_090319) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "food_resources", force: :cascade do |t|
+  create_table "food_pantries", force: :cascade do |t|
     t.string "name"
     t.string "address_line1"
     t.string "address_line2"
@@ -46,7 +46,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_07_090319) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.string "ext"
-    t.index ["town_id"], name: "index_food_resources_on_town_id"
+    t.index ["town_id"], name: "index_food_pantries_on_town_id"
   end
 
   create_table "sessions", force: :cascade do |t|
@@ -75,9 +75,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_02_07_090319) do
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 
-  add_foreign_key "comments", "food_resources"
+  add_foreign_key "comments", "food_pantries"
   add_foreign_key "comments", "users"
-  add_foreign_key "food_resources", "towns"
+  add_foreign_key "food_pantries", "towns"
   add_foreign_key "sessions", "users"
   add_foreign_key "towns", "counties"
 end

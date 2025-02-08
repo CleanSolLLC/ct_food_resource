@@ -8,7 +8,6 @@ require "smarter_csv"
 
 path_to_towns_csv = Rails.root.join("towns.csv")
 
-
 if File.exist?(path_to_towns_csv)
   SmarterCSV.process(path_to_towns_csv).each do |row|
     county = row[:county]
@@ -42,8 +41,8 @@ user3 = User.create!(
 )
 puts "Seeding users complete!"
 
-puts "Seeding food resources..."
-food_resource_1 = FoodResource.create!(
+puts "Seeding food pantries..."
+food_pantry_1 = FoodPantry.create!(
   name: "MACC Community Emergency Food Pantry",
   address_line1: "460 Main Street",
   address_line2: "",
@@ -56,13 +55,13 @@ food_resource_1 = FoodResource.create!(
   town_id: Town.find_by(name: "Manchester")&.id
 )
 
-food_resource_1.comments << Comment.create!(
+food_pantry_1.comments << Comment.create!(
   body: "This pantry is open every Tuesday and Thursday from 10am to 1pm. It has dry and canned goods",
   user_id: user1.id,
-  food_resource_id: food_resource_1.id
+  food_pantry_id: food_pantry_1.id
 )
 
-food_resource_2 = FoodResource.create!(
+food_pantry_2 = FoodPantry.create!(
   name: "House of harvest",
   address_line1: "114 Wooster Street",
   address_line2: "",
@@ -75,13 +74,13 @@ food_resource_2 = FoodResource.create!(
   town_id: Town.find_by(name: "Hartford")&.id,
   user_id: user1.id
 )
-food_resource_2.comments << Comment.create!(
+food_pantry_2.comments << Comment.create!(
   body: "Went on a Thursday, staff very kind and helpful. It has dry and canned goods and some produce",
   user_id: user1.id,
-  food_resource_id: food_resource_2.id
+  food_pantry_id: food_pantry_2.id
 )
 
-food_resource_3 = FoodResource.create!(
+food_pantry_3 = FoodPantry.create!(
   name: "Jewish Family Service of Greater New Haven Food Pantry",
   address_line1: "1440 Whalley Avenue",
   address_line2: "",
@@ -93,13 +92,13 @@ food_resource_3 = FoodResource.create!(
   verified: true,
   town_id: Town.find_by(name: "New Haven")&.id
 )
-food_resource_3.comments << Comment.create!(
+food_pantry_3.comments << Comment.create!(
   body: "Open every Wednesday and Thursday from 9am to 12pm. It has dry goods and dairy products",
   user_id: user2.id,
-  food_resource_id: food_resource_3.id
+  food_pantry_id: food_pantry_3.id
 )
 
-food_resource_4 = FoodResource.create!(
+food_pantry_4 = FoodPantry.create!(
   name: "Town of Woodbridge Emergency Food Pantry",
   address_line1: "4 Meetinghouse Lane",
   address_line2: "",
@@ -112,10 +111,10 @@ food_resource_4 = FoodResource.create!(
   town_id: Town.find_by(name: "Woodbridge")&.id,
   user_id: user3.id
 )
-food_resource_4.comments << Comment.create!(
+food_pantry_4.comments << Comment.create!(
   body: "Open ever Monday through Friday from 8:30am to 4:30pm. I think it is only for town residents",
   user_id: user3.id,
-  food_resource_id: food_resource_4.id
+  food_pantry_id: food_pantry_4.id
 )
 
-puts "Seeding food resources complete!"
+puts "Seeding food pantries complete!"

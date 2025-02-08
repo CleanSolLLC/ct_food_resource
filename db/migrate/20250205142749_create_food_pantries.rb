@@ -1,6 +1,6 @@
-class CreateFoodResources < ActiveRecord::Migration[8.0]
+class CreateFoodPantries < ActiveRecord::Migration[8.0]
   def change
-    create_table :food_resources do |t|
+    create_table :food_pantries do |t|
       t.string :name
       t.string :address_line1
       t.string :address_line2
