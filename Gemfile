@@ -65,6 +65,6 @@ end
 
 gem "smarter_csv", "~> 1.13"
 
-gem "tailwindcss-ruby", "~> 4.0"
+gem "tailwindcss-ruby", "~> 4.1"
 
 gem "tailwindcss-rails", "~> 4.0"
